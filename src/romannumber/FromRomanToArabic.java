@@ -36,12 +36,6 @@ public class FromRomanToArabic {
 	}
 
 	private void verificaOrdenCorrecto(Integer actual, Integer previous) {
-		if (previous == -1) {
-			return;
-		}
-		if (previous == actual) {
-			return;
-		}
 		if ( (actual == 1) &&  (previous != 10) && (previous != 5) ) {
 			throw new WrongOrderInRomanNumberException();
 		}
