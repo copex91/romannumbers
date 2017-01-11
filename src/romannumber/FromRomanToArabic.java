@@ -21,8 +21,14 @@ public class FromRomanToArabic {
 		for (int i = romanNumber.length() -1; i >=0 ; i--) {
 			nextChar = String.valueOf(romanNumber.charAt(i));
 			actual = getValor(nextChar);
-			verificaOrdenCorrecto(actual, previous);
-			res = assignaSigno(actual, previous);
+
+			if(previous != -1 && previous != actual){
+				verificaOrdenCorrecto(actual, previous);
+				res = res + assignaSigno(actual, previous);
+			} else {
+				res = assignaSigno(actual, previous);
+			}
+
 			previous = actual;
 		}
 		return res;
